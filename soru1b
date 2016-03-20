@@ -1,0 +1,29 @@
+#include<stdio.h>
+#include<stdlib.h>
+
+ double rastgele_ondalikli()
+{
+  double sayi = (double)rand();
+  return (sayi / (RAND_MAX + 1.0));
+}
+
+int geometrik_rastgele_deger(double p)
+{
+  double q;
+  q = rastgele_ondalikli();
+  int n = 0;
+  while (q >=p){
+     q = rastgele_ondalikli();
+     n++;
+  }
+  return n;
+}
+
+int main()
+{
+  double c = 5, d;
+  
+  d = geometrik_rastgele_deger(c);
+  printf("%f\n",d);
+  return 0;
+}
